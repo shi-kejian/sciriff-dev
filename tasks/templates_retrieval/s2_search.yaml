@@ -1,0 +1,87 @@
+name: s2_search
+dataset: allenai/scirepeval
+subset: search
+split_lookup:
+  train: train
+  validation: validation
+  test: evaluation
+formatter:
+  name: scirepeval
+  args:
+    fields_to_keep: ['title', 'abstract', 'n_citations', 'author_names', 'venue', 'year']
+metadata:
+  task: ranking
+  domains:
+    - misc
+  source_type: single_source
+  input_context: structured
+  output_context: ranking
+  contributor: sergeyf
+templates:
+  0:
+    answer_choices: null
+    evaluate: true
+    jinja: |
+      You are RankLLM, an intelligent assistant that can rank passages based on their relevancy to the query.
+
+      I will provide you with titles, abstracts, citation counts, authors and venues of scientific papers, each indicated by a numerical identifier [].
+
+      Rank the scientific papers based on their relevance to the search query. All the passages should be included and listed using identifiers, in descending order of relevance.
+      Papers with more citations are generally more relevant than papers with fewer citations. Recency and venue reputation are important factors as well.
+      The output format should be [a] > [b] when [a] is more relevant than [b] or [a] = [b] when [a] is equally relevant to [b], e.g., [4] > [2] > [1] = [3].
+
+      For example, for the search query: "neural networks graphs hinton" and the following papers:
+      {
+        "id": "[1]",
+        "title": "Graphical models, exponential families, and variational inference",
+        "abstract": "We describe a class of probabilistic models that we call...",
+        "author_names": "M. I. Jordan, Z. Ghahramani, T. S. Jaakkola, L. K. Saul",
+        "venue": "Neural Computation",
+        "n_citations": 3017,
+        "year": 1999
+      }
+      {
+        "id": "[2]",
+        "title": "A fast learning algorithm for deep belief nets",
+        "abstract": "We present a new learning algorithm for Boltzmann machines...",
+        "author_names": "G. E. Hinton, S. Osindero, Y. W. Teh",
+        "venue": "",
+        "n_citations": 3078,
+        "year": 2006
+      }
+      {
+        "id": "[3]",
+        "title": "Learning deep architectures for AI",
+        "abstract": "Theoretical results suggest that in order to learn the kind...",
+        "author_names": "Y. Bengio",
+        "venue": "arxiv",
+        "n_citations": 2093,
+        "year": 2009
+      }
+      {
+        "id": "[4]",
+        "title": "Ten algorithms that mattered",
+        "abstract": "This paper reviews ten algorithms that have been...",
+        "author_names": "G. Hinton",
+        "venue": "arxiv",
+        "n_citations": 87,
+        "year": 2020
+      }
+
+      The second is topically relevant and written by Hinton, while the others are related to one aspect of the query and are thus equally relevant. The correct ranking is therefore:
+
+      [2] > [3] = [1] = [4]
+
+      Now, rank the following passages based on their relevance to the search query: {{query}}.
+
+      {{papers}}
+
+      Search Query: {{query}}.
+
+      Only respond with the ranking results, do not say any word or explain.
+
+      |||
+
+      {{ranking}}
+    metadata:
+      description_loc: before

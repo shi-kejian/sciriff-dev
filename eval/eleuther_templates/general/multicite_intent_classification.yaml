@@ -1,0 +1,3 @@
+include: _default_template.yaml
+task: multicite_intent_classification
+dataset_name: multicite_intent_classification

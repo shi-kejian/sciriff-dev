@@ -1,0 +1,12 @@
+# Merge continued finetuning on 200 per task, no tulu in mix.
+
+
+models:
+  - model: /model_1
+    parameters:
+      weight: 1
+  - model: /model_2
+    parameters:
+      weight: 1
+merge_method: linear
+dtype: float16

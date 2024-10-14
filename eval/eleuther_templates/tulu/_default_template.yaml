@@ -1,0 +1,16 @@
+# NOTE: test_split is commented because there's no way to ask Eleuther to eval
+# on validation if test is provided; change this back when done ablating.
+group:
+  - science_adapt
+dataset_path: ai2-adapt-dev/science-adapt-4096
+validation_split: validation
+# test_split: test
+doc_to_text: "<|user|>\n{{ input }}\n<|assistant|>"
+doc_to_target: output
+target_delimiter: "\n"
+fewshot_delimiter: "\n\n--------------------\n\n"
+metric_list:
+  - metric: bleu
+    aggregation: mean
+    higher_is_better: true
+    hf_evaluate: true

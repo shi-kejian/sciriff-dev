@@ -1,0 +1,3 @@
+include: _default_template.yaml
+task: qasper_abstractive_qa
+dataset_name: qasper_abstractive_qa

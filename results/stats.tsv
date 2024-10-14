@@ -1,0 +1,55 @@
+name	task	domains	source_type	input_context	output_context	n_train	n_validation	n_test	total_toks_input	total_toks_output	total_toks	median_toks_input	median_toks_output	mean_toks_input	mean_toks_output
+acl_arc_intent_classification	classification	artificial_intelligence	single_source	multiple_paragraphs	label	1688	114	139	941162	3805	944967	541	1	557.5604265402843	2.2541469194312795
+anat_em_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	606	201	404	302329	31201	333530	491	44	498.8927392739274	51.48679867986799
+annotated_materials_syntheses_events	ie.event_extraction	materials_science	single_source	paragraph	json	149	30	50	127989	56330	184319	805	310	858.9865771812081	378.0536912751678
+bc7_litcovid_topic_classification	classification	clinical_medicine	single_source	paragraph	json	2500	2500	2500	1538021	16760	1554781	600	5	615.2084	6.704
+bioasq_factoid_qa	qa.abstractive	biomedicine	multiple_source	multiple_paragraphs	sentence	1316	98	98	920463	13361	933824	455	7	699.4399696048632	10.152735562310031
+bioasq_general_qa	qa.abstractive	biomedicine	multiple_source	multiple_paragraphs	sentence	1054	76	76	775516	179625	955141	558	106	735.7836812144212	170.42220113851994
+bioasq_list_qa	qa.abstractive	biomedicine	multiple_source	multiple_paragraphs	json	832	64	64	774003	31939	805942	744	28	930.2920673076923	38.38822115384615
+bioasq_yesno_qa	qa.yes_no	biomedicine	multiple_source	multiple_paragraphs	label	1181	86	86	873954	1181	875135	516	1	740.0118543607113	1.0
+biored_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	400	100	100	270844	56723	327567	678	134	677.11	141.8075
+cdr_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	500	500	500	251557	38431	289988	493	70	503.114	76.862
+chemdner_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	2500	2500	2500	1249051	109133	1358184	492	31	499.6204	43.6532
+chemprot_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	1020	612	800	618341	110814	729155	602	99	606.2166666666667	108.64117647058823
+chemprot_re	ie.relation_extraction	biomedicine	single_source	paragraph	json	1020	612	800	763307	104786	868093	745	61	748.3401960784314	102.73137254901961
+chemsum_single_document_summarization	summarization	chemistry	single_source	multiple_paragraphs	paragraph	2500	110	196	7603347	564277	8167624	3131	198	3041.3388	225.7108
+chemtables_te	ie.structure_to_json	chemistry	single_source	structured	jsonlines	5	1	11	6668	3766	10434	1401	875	1333.6	753.2
+chia_ner	ie.named_entity_recognition	clinical_medicine	single_source	paragraph	json	1199	400	400	596760	302760	899520	434	173	497.71476230191826	252.51042535446206
+covid_deepset_qa	qa.extractive	biomedicine	single_source	paragraph	sentence	1208	402	402	4518545	29625	4548170	3918	17	3740.5173841059604	24.524006622516556
+covidfact_entailment	entailment	biomedicine | clinical_medicine	single_source	paragraph	json	752	188	317	482130	74621	556751	616	82	641.1303191489362	99.23005319148936
+craftchem_ner	ie.named_entity_recognition	biomedicine	single_source	sentence	json	2500	2500	2500	303911	5651	309562	118	1	121.5644	2.2604
+data_reco_mcq_mc	qa.multiple_choice	artificial_intelligence	multiple_source	multiple_paragraphs	json	1489	497	497	911573	16908	928481	606	11	612.2048354600403	11.355271994627266
+data_reco_mcq_sc	qa.multiple_choice	artificial_intelligence	multiple_source	multiple_paragraphs	label	1500	500	500	585146	4805	589951	385	3	390.0973333333333	3.203333333333333
+ddi_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	571	143	303	302533	57315	359848	418	69	529.8301225919439	100.37653239929948
+discomat_te	ie.structure_to_json	materials_science	single_source	structured	jsonlines	475	475	450	286664	307939	594603	520	459	603.5031578947369	648.2926315789474
+drug_combo_extraction_re	ie.relation_extraction	clinical_medicine	single_source	paragraph	json	1090	272	272	1057887	18485	1076372	946	18	970.5385321100918	16.958715596330276
+evidence_inference	ie.relation_extraction	clinical_medicine	single_source	paragraph	json	1678	250	205	1588603	411296	1999899	938	209	946.7240762812872	245.11084624553038
+genia_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	1568	210	213	935982	278589	1214571	593	171	596.9272959183673	177.67155612244898
+gnormplus_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	346	86	262	173618	18740	192358	493	47	501.78612716763007	54.16184971098266
+healthver_entailment	entailment	clinical_medicine	single_source	paragraph	json	2500	940	903	1709494	173178	1882672	665	52	683.7976	69.2712
+linnaeus_ner	ie.named_entity_recognition	biomedicine	single_source	multiple_paragraphs	json	10	3	3	25877	318	26195	2736	13	2587.7	31.8
+medmentions_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	2500	878	879	2276905	820212	3097117	909	321	910.762	328.0848
+mltables_te	ie.structure_to_json	artificial_intelligence	single_source	structured	jsonlines	25	7	26	61257	16860	78117	2460	691	2450.28	674.4
+mslr2022_cochrane_multidoc_summarization	summarization	clinical_medicine	multiple_source	paragraph	paragraph	2125	308	308	3680916	206818	3887734	1566	88	1732.1957647058823	97.32611764705882
+mslr2022_ms2_multidoc_summarization	summarization	clinical_medicine	multiple_source	paragraph	paragraph	2087	273	273	5539027	168418	5707445	2787	63	2654.0618112122665	80.69861044561571
+multicite_intent_classification	classification	artificial_intelligence	single_source	paragraph	json	2500	2447	2500	790643	11406	802049	306	4	316.2572	4.5624
+multixscience_multidoc_summarization	summarization	artificial_intelligence | biomedicine | materials_science | misc	multiple_source	multiple_paragraphs	paragraph	2500	2500	2500	2677648	374354	3052002	912	144	1071.0592	149.7416
+mup_single_document_summarization	summarization	artificial_intelligence	single_source	multiple_paragraphs	paragraph	2000	500	2500	6387590	276446	6664036	3149	119	3193.795	138.223
+ncbi_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	592	100	100	274823	28673	303496	462	42	464.2280405405405	48.43412162162162
+nlmchem_ner	ie.named_entity_recognition	biomedicine	single_source	multiple_paragraphs	json	4	1	2	10890	772	11662	2882	215	2722.5	193.0
+nlmgene_ner	ie.named_entity_recognition	biomedicine	single_source	paragraph	json	360	90	100	230535	37191	267726	643	96	640.375	103.30833333333334
+pico_ner	ie.named_entity_recognition	clinical_medicine	single_source	paragraph	json	2313	187	187	1386719	342693	1729412	609	142	599.5326415910074	148.15953307392996
+pubmedqa_qa	qa.yes_no	biomedicine	single_source	paragraph	label	450	50	500	212770	548	213318	465	1	472.8222222222222	1.2177777777777778
+qasa_abstractive_qa	qa.abstractive	artificial_intelligence	single_source	multiple_paragraphs	paragraph	932	310	310	383109	51694	434803	328	44	411.06115879828326	55.4656652360515
+qasper_abstractive_qa	qa.abstractive	artificial_intelligence	single_source	multiple_paragraphs	json	206	107	213	700576	47066	747642	3538	211	3400.854368932039	228.4757281553398
+qasper_extractive_qa	qa.extractive	artificial_intelligence	single_source	multiple_paragraphs	json	709	339	537	2409275	155647	2564922	3537	194	3398.1311706629053	219.53032440056418
+scicite_classification	classification	artificial_intelligence	single_source	paragraph	label	2500	916	1859	467112	2500	469612	179	1	186.8448	1.0
+scientific_lay_summarisation_elife_single_doc_summ	summarization	biomedicine	single_source	multiple_paragraphs	paragraph	1149	65	73	3274562	554627	3829189	2978	478	2849.923411662315	482.70409051349
+scientific_lay_summarisation_plos_single_doc_summ	summarization	biomedicine	single_source	multiple_paragraphs	paragraph	2500	368	428	7593586	658213	8251799	3147	266	3037.4344	263.2852
+scientific_papers_summarization_single_doc_arxiv	summarization	artificial_intelligence | misc	single_source	multiple_paragraphs	paragraph	2500	921	875	6579395	616150	7195545	2766	167	2631.758	246.46
+scientific_papers_summarization_single_doc_pubmed	summarization	biomedicine	single_source	multiple_paragraphs	paragraph	2500	2500	2500	5676942	647840	6324782	2259	246	2270.7768	259.136
+scierc_ner	ie.named_entity_recognition	artificial_intelligence	single_source	paragraph	json	346	50	99	201894	35951	237845	578	101	583.5086705202312	103.90462427745665
+scierc_re	ie.relation_extraction	artificial_intelligence	single_source	paragraph	json	346	50	99	197396	61131	258527	565	161	570.5086705202312	176.67919075144508
+scifact_entailment	entailment	biomedicine | clinical_medicine	single_source	paragraph	json	735	184	340	521081	64115	585196	626	63	708.9537414965987	87.2312925170068
+scireviewgen_multidoc_summarization	summarization	artificial_intelligence	multiple_source	multiple_paragraphs	paragraph	2500	2500	2500	2597776	1589027	4186803	818	530	1039.1104	635.6108
+scitldr_aic	summarization	artificial_intelligence	single_source	multiple_paragraphs	sentence	1985	615	616	3022736	54376	3077112	1470	26	1522.7889168765744	27.39345088161209

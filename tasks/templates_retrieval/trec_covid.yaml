@@ -1,0 +1,73 @@
+name: trec_covid
+dataset: allenai/scirepeval
+subset: trec_covid
+split_lookup:
+  test: evaluation
+standardize_splits: false
+formatter:
+  name: scirepeval
+  args:
+    fields_to_keep: ['title', 'abstract', 'date']
+metadata:
+  task: ranking
+  domains:
+    - clinical_medicine
+  source_type: single_source
+  input_context: structured
+  output_context: ranking
+  contributor: sergeyf
+templates:
+  0:
+    answer_choices: null
+    evaluate: true
+    jinja: |
+      You are RankLLM, an intelligent assistant that can rank passages based on their relevancy to the query.
+
+      I will provide you with titles and abstracts of scientific papers, each indicated by a numerical identifier [].
+
+      Rank the scientific papers based on their relevance to the search query. All the passages should be included and listed using identifiers, in descending order of relevance.
+      The output format should be [a] > [b] when [a] is more relevant than [b] or [a] = [b] when [a] is equally relevant to [b], e.g., [4] > [2] > [1] = [3].
+
+      For example, for the search query: "Does advil help covid symptoms?" and the following papers:
+      {
+        "id": "[1]",
+        "title": "Sociological studies of the sick and ill: a review",
+        "abstract": "We studied coronavirus patients who had higher wealth and found that they were more likely to take advil.."
+        "data": "2023-01-01"
+      }
+      {
+        "id": "[2]",
+        "title": "Coronovirus and ibuprofen: a pharmacokinetic interaction study",
+        "abstract": "The pharmacokinetic interaction between COVID-19 and ibuprofen was investigated in 12 healthy volunteers...",
+        "date": "2021-01-01"
+      }
+      {
+        "id": "[3]",
+        "title": "Studying the effect of caffeine on the pharmacokinetics of COVID-19 in late-stage cancer patients",
+        "abstract": "The aim of this study was to investigate the effect of caffeine on the pharmacokinetics of COVID-19 in late-stage cancer patients...",
+        "date": "2020-04-01
+      }
+      {
+        "id": "[4]",
+        "title": "My life",
+        "abstract": "I woke up this morning with a harsh case of covid. It was time to take some advil. I felt better afterwards.",
+        "date": "2020-12-21"
+      }
+
+      All four mention covid and advil, but the second is about interactions, while the third is about interactions in a subpopulation that was not specified in the query. The first does not mention interactions. The correct ranking is therefore:
+
+      [2] > [3] > [1] = [4]
+
+      Now, rank the following passages based on their relevance to the search query: {{query}}.
+
+      {{papers}}
+
+      Search Query: {{query}}.
+
+      Only respond with the ranking results, do not say any word or explain.
+
+      |||
+
+      {{ranking}}
+    metadata:
+      description_loc: before

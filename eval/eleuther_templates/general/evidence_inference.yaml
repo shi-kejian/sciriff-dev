@@ -1,0 +1,5 @@
+include: _default_template.yaml
+task: evidence_inference
+dataset_name: evidence_inference
+num_fewshot: 1
+fewshot_delimiter: "\n\n\n"

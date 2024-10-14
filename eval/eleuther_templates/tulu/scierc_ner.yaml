@@ -1,0 +1,3 @@
+include: _default_template.yaml
+task: scierc_ner
+dataset_name: scierc_ner

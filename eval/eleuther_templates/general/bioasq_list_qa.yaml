@@ -1,0 +1,3 @@
+include: _default_template.yaml
+task: bioasq_list_qa
+dataset_name: bioasq_list_qa

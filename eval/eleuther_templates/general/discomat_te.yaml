@@ -1,0 +1,3 @@
+include: _default_template.yaml
+task: discomat_te
+dataset_name: discomat_te

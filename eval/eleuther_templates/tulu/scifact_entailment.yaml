@@ -1,0 +1,3 @@
+include: _default_template.yaml
+task: scifact_entailment
+dataset_name: scifact_entailment
